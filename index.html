@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Arabista Café — Coffee. Community. Connection. | Pal, Surat</title>
+  <meta name="description" content="Arabista is Surat's open-air café for entrepreneurs, creators and professionals. Espresso tonics, matcha, cold brew, wood-fired comfort food and sunset views by the Pal–Umra bridge. Open daily 9 AM – 11:30 PM." />
+  <meta name="theme-color" content="#0b2526" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/ig/logo.jpg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Arabista Café — Coffee. Community. Connection." />
+  <meta property="og:description" content="Surat's hub for coffee, creators and conversation. Open daily 9 AM – 11:30 PM, Pal Gam." />
+  <meta property="og:image" content="assets/ig/p08-thisis.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>document.documentElement.classList.add("js")</script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Arabista",
+    "slogan": "Coffee. Community. Connection.",
+    "image": "assets/ig/p08-thisis.jpg",
+    "telephone": "+91-7600577745",
+    "servesCuisine": ["Coffee", "Italian", "Continental", "Desserts"],
+    "priceRange": "₹₹",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Plot 3, Gaurav Path, Park Arena Road, Near Pal Umra Bridge, Pal Gam",
+      "addressLocality": "Surat",
+      "addressRegion": "Gujarat",
+      "postalCode": "395009",
+      "addressCountry": "IN"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00", "closes": "23:30"
+    }],
+    "sameAs": ["https://www.instagram.com/arabista_in/", "https://www.zomato.com/surat/arabista-pal-gam"]
+  }
+  </script>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="is-loading">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__inner">
+      <div class="loader__cup">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs>
+            <clipPath id="cupClip"><path d="M28 38h56l-6 52a10 10 0 0 1-10 9H44a10 10 0 0 1-10-9z" /></clipPath>
+          </defs>
+          <g clip-path="url(#cupClip)">
+            <rect class="loader__fill" x="20" y="100" width="80" height="70" />
+          </g>
+          <path d="M28 38h56l-6 52a10 10 0 0 1-10 9H44a10 10 0 0 1-10-9z" fill="none" stroke="currentColor" stroke-width="2.5" />
+          <path d="M84 50h6a10 10 0 0 1 0 20h-8" fill="none" stroke="currentColor" stroke-width="2.5" />
+          <path class="loader__steam" d="M48 28c-4-6 4-8 0-14M60 28c-4-6 4-8 0-14M72 28c-4-6 4-8 0-14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+        </svg>
+      </div>
+      <div class="loader__word" aria-label="Arabista">
+        <span>A</span><span>R</span><span>A</span><span class="b">b</span><span>I</span><span>S</span><span>T</span><span>A</span>
+      </div>
+      <div class="loader__count"><span id="loaderCount">0</span>%</div>
+    </div>
+    <div class="loader__curtain"></div>
+  </div>
+
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__ring"><em></em></span></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#top" class="brand" aria-label="Arabista — home">
+      <span class="brand__word">ARA<i>b</i>ISTA</span>
+      <span class="brand__tag">Coffee · Community · Connection</span>
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="#signatures">Signatures</a>
+      <a href="#menu">Menu</a>
+      <a href="#ambience">Ambience</a>
+      <a href="#events">Events</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="nav__right">
+      <span class="status" id="openStatus"><i></i><b>Checking…</b></span>
+      <a href="#visit" class="btn btn--gold btn--sm magnetic" data-reserve>Reserve</a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <div class="mmenu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="#signatures"><small>01</small>Signatures</a>
+      <a href="#menu"><small>02</small>Menu</a>
+      <a href="#ambience"><small>03</small>Ambience</a>
+      <a href="#events"><small>04</small>Events</a>
+      <a href="#visit"><small>05</small>Visit &amp; Reserve</a>
+    </nav>
+    <div class="mmenu__foot">
+      <p>Plot 3, Gaurav Path, Park Arena Rd,<br />Pal Gam, Surat</p>
+      <p>Open daily · 9 AM – 11:30 PM</p>
+      <a href="https://www.instagram.com/arabista_in/" target="_blank" rel="noopener">@arabista_in</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="top">
+      <canvas class="hero__canvas" id="heroCanvas" aria-label="Interactive 3D Espresso Tonic — drag to rotate"></canvas>
+      <img class="webgl-fallback" src="assets/ig/p01-flavors.jpg" alt="Arabista Espresso Tonic on a wooden table" />
+      <div class="hero__content container">
+        <p class="eyebrow reveal-up"><span class="dot"></span> Pal · Surat · Open daily 9 AM – 11:30 PM</p>
+        <h1 class="hero__title">
+          <span class="line"><span>Flavours</span></span>
+          <span class="line"><span>in <em>motion.</em></span></span>
+        </h1>
+        <p class="hero__lead reveal-up">Coffee. Community. Connection. Surat's open-air hub for entrepreneurs, creators and professionals — and anyone who likes their espresso with a sunset.</p>
+        <div class="hero__cta reveal-up">
+          <a href="#menu" class="btn btn--gold magnetic"><span>Explore the menu</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+          <a href="#visit" class="btn btn--ghost magnetic" data-reserve><span>Book a table</span></a>
+        </div>
+        <div class="hero__meta reveal-up">
+          <div><b data-count="63">0</b><span>ways to drink</span></div>
+          <div><b data-count="100">0</b><span>items on the menu</span></div>
+          <div><b>1</b><span>sunset, every evening</span></div>
+        </div>
+      </div>
+      <div class="hero__tag reveal-up" aria-hidden="true">
+        <span>Signature</span>
+        <strong>Espresso Tonic</strong>
+        <em>₹200 · drag to spin</em>
+      </div>
+      <a href="#story" class="scroll-cue" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Espresso Tonic</span><i>✦</i><span>Strawberry Matcha</span><i>✦</i><span>Passion Cold Brew</span><i>✦</i><span>Café Bombón</span><i>✦</i><span>Biscoff Cheesecake</span><i>✦</i><span>V60 Pour Over</span><i>✦</i><span>Cheese Garlic Bread</span><i>✦</i><span>Strato Lasagna</span><i>✦</i>
+        <span>Espresso Tonic</span><i>✦</i><span>Strawberry Matcha</span><i>✦</i><span>Passion Cold Brew</span><i>✦</i><span>Café Bombón</span><i>✦</i><span>Biscoff Cheesecake</span><i>✦</i><span>V60 Pour Over</span><i>✦</i><span>Cheese Garlic Bread</span><i>✦</i><span>Strato Lasagna</span><i>✦</i>
+      </div>
+    </div>
+
+    <!-- ============ STORY ============ -->
+    <section class="story section" id="story">
+      <div class="container story__grid">
+        <div class="story__text">
+          <p class="kicker">Our story</p>
+          <h2 class="h2 split">A café built for <em>long plans</em> and last-minute ones.</h2>
+          <p class="reveal-up">Arabista sits beside the Pal–Umra bridge — an open-air courtyard of green chairs, warm string lights and one of the best sunset views in Surat. Founders sketch pitch decks here. Creators shoot reels here. Friends come for a quick coffee and stay till close.</p>
+          <p class="reveal-up">Behind the bar, a precision grinder doses every shot to the gram, cold brew steeps slowly, and matcha gets whisked to order. In the kitchen: honest Italian comfort, crispy bites and desserts worth the detour.</p>
+          <div class="story__sign reveal-up">
+            <span>Come as you are.</span>
+            <strong>Your table's waiting.</strong>
+          </div>
+        </div>
+        <div class="story__media">
+          <figure class="frame frame--tall parallax" data-speed="-0.08">
+            <img src="assets/ig/p08-thisis.jpg" alt="Arabista's open-air seating with green chairs and a signature drink" loading="lazy" />
+          </figure>
+          <figure class="frame frame--small parallax" data-speed="0.12">
+            <img src="assets/ig/p12-latte.jpg" alt="Latte with floral latte art beside a chocolate brownie" loading="lazy" />
+          </figure>
+          <div class="badge-spin" aria-hidden="true">
+            <svg viewBox="0 0 200 200">
+              <defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" /></defs>
+              <text><textPath href="#circ">COFFEE · COMMUNITY · CONNECTION · SURAT ·</textPath></text>
+            </svg>
+            <span>A</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LETTERS ============ -->
+    <section class="letters section" id="letters">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Eight letters, one feeling</p>
+          <h2 class="h2 split">Spell it out: <em>A·R·A·B·I·S·T·A</em></h2>
+          <p class="section-head__sub reveal-up">Every letter of our name stands for something you'll find here. Hover — or tap — to peek inside.</p>
+        </div>
+        <ul class="letters__grid" id="lettersGrid">
+          <li class="letter" tabindex="0"><img src="assets/ig/h-drinks.jpg" alt="" loading="lazy" /><b>A</b><span>Drinks</span><p>Espresso, cold brew, matcha &amp; 60+ more.</p></li>
+          <li class="letter" tabindex="0"><img src="assets/ig/h-food.jpg" alt="" loading="lazy" /><b>R</b><span>Food</span><p>Pasta, pizza, croissants &amp; crispy bites.</p></li>
+          <li class="letter" tabindex="0"><img src="assets/ig/h-events.jpg" alt="" loading="lazy" /><b>A</b><span>Events</span><p>Dandiya nights, launches &amp; late sessions.</p></li>
+          <li class="letter" tabindex="0"><img src="assets/ig/h-ambience.jpg" alt="" loading="lazy" /><b>B</b><span>Ambience</span><p>Open air, warm lights, sunset views.</p></li>
+          <li class="letter" tabindex="0"><img src="assets/ig/h-team.jpg" alt="" loading="lazy" /><b>I</b><span>Team</span><p>Baristas who remember your order.</p></li>
+          <li class="letter" tabindex="0"><img src="assets/ig/h-review.jpg" alt="" loading="lazy" /><b>S</b><span>Reviews</span><p>Surat's creators keep coming back.</p></li>
+          <li class="letter" tabindex="0"><img src="assets/ig/h-takeaway.jpg" alt="" loading="lazy" /><b>T</b><span>Takeaway</span><p>Your favourites, bagged and ready.</p></li>
+          <li class="letter" tabindex="0"><img src="assets/ig/h-people.jpg" alt="" loading="lazy" /><b>A</b><span>People</span><p>Cheers to the community.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ SIGNATURES (3D) ============ -->
+    <section class="sig section" id="signatures">
+      <div class="container sig__grid">
+        <div class="sig__stage">
+          <canvas id="sigCanvas" aria-label="3D signature drink — drag to rotate"></canvas>
+          <img class="webgl-fallback" src="assets/ig/p07-sipslay.jpg" alt="Arabista signature drinks" />
+          <div class="sig__hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12h8M5 9l-3 3 3 3M19 9l3 3-3 3" /></svg>Drag to rotate</div>
+          <ol class="sig__layers" id="sigLayers" aria-label="Layers"></ol>
+        </div>
+        <div class="sig__panel">
+          <p class="kicker">Signature bar · 3D</p>
+          <h2 class="h2 split">Six signatures, six moods, <em>one very difficult decision.</em></h2>
+          <div class="sig__chips" role="tablist" aria-label="Choose a signature drink" id="sigChips"></div>
+          <article class="sig__card" id="sigCard" aria-live="polite">
+            <div class="sig__mood" id="sigMood"></div>
+            <h3 class="sig__name" id="sigName"></h3>
+            <p class="sig__note" id="sigNote"></p>
+            <ul class="sig__notes" id="sigNotes"></ul>
+            <div class="sig__buy">
+              <span class="sig__price" id="sigPrice"></span>
+              <button class="btn btn--gold magnetic" id="sigAdd"><span>Add to tray</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg></button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="menu section" id="menu">
+      <div class="container">
+        <div class="section-head section-head--row">
+          <div>
+            <p class="kicker">The menu</p>
+            <h2 class="h2 split">Slow down. Sip slowly. <em>Stay a little longer.</em></h2>
+          </div>
+          <div class="menu__tools">
+            <label class="search">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+              <input type="search" id="menuSearch" placeholder="Search 100 dishes &amp; drinks…" aria-label="Search the menu" />
+            </label>
+            <label class="toggle">
+              <input type="checkbox" id="sigOnly" />
+              <span class="toggle__ui" aria-hidden="true"></span>
+              Signatures only
+            </label>
+          </div>
+        </div>
+        <div class="menu__tabs" role="tablist" aria-label="Menu categories" id="menuTabs"></div>
+        <div class="menu__body">
+          <div class="menu__intro" id="menuIntro"></div>
+          <ul class="menu__list" id="menuList"></ul>
+          <p class="menu__empty" id="menuEmpty" hidden>Nothing matches that — try “matcha”, “cheese” or “cold brew”.</p>
+        </div>
+        <p class="menu__foot">Prices in ₹, as listed on our Zomato page; in-café prices may vary. Tap <b>+</b> to build your tray and send it to us on WhatsApp.</p>
+      </div>
+    </section>
+
+    <!-- ============ AMBIENCE (horizontal) ============ -->
+    <section class="amb" id="ambience">
+      <div class="amb__pin">
+        <div class="amb__head container">
+          <p class="kicker">Ambience</p>
+          <h2 class="h2">Your kind of place, <em>your kind of vibe.</em></h2>
+        </div>
+        <div class="amb__track" id="ambTrack">
+          <figure class="amb__card amb__card--wide"><img src="assets/ig/p08-thisis.jpg" alt="Open-air seating at Arabista" loading="lazy" /><figcaption><b>01</b> The courtyard <span>Green chairs, open sky, sunset light.</span></figcaption></figure>
+          <figure class="amb__card"><img src="assets/ig/p04-neon.jpg" alt="Arabista neon sign glowing at night" loading="lazy" /><figcaption><b>02</b> After dark <span>The neon comes on and the playlist goes up.</span></figcaption></figure>
+          <figure class="amb__card"><img src="assets/ig/p02-grind.jpg" alt="Precision espresso grinder at Arabista" loading="lazy" /><figcaption><b>03</b> The grind <span>Every shot weighed and timed.</span></figcaption></figure>
+          <figure class="amb__card amb__card--wide"><img src="assets/ig/p06-nightlights.jpg" alt="Fairy lights over an evening event at Arabista" loading="lazy" /><figcaption><b>04</b> String-light nights <span>A canopy of warm lights over the courtyard.</span></figcaption></figure>
+          <figure class="amb__card"><img src="assets/ig/p03-matcha.jpg" alt="Iced matcha held in two hands" loading="lazy" /><figcaption><b>05</b> Matcha hour <span>Matcha made us do it.</span></figcaption></figure>
+          <figure class="amb__card"><img src="assets/ig/p09-cappuccino.jpg" alt="Cappuccino with latte art and biscotti" loading="lazy" /><figcaption><b>06</b> The quiet corner <span>A warm cup and a little more time.</span></figcaption></figure>
+          <div class="amb__end">
+            <p>Seen enough?</p>
+            <a href="#visit" class="btn btn--gold magnetic" data-reserve><span>Save me a seat</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CRAFT ============ -->
+    <section class="craft section" id="craft">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Brew like an Arabista</p>
+          <h2 class="h2 split">From bean to <em>bloom.</em></h2>
+        </div>
+        <ol class="craft__steps">
+          <li class="reveal-up">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="32" cy="32" rx="16" ry="22" /><path d="M32 10c-6 10 6 34 0 44" /></svg>
+            <b>01</b><h3>Choose the bean</h3><p>Good beans, dialled in at the bar before every service.</p>
+          </li>
+          <li class="reveal-up">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><rect x="18" y="8" width="28" height="14" rx="3" /><path d="M22 22h20l-4 18H26z" /><path d="M24 50h16M32 40v10" /></svg>
+            <b>02</b><h3>Grind to the gram</h3><p>A precision grinder doses each shot by weight, not guesswork.</p>
+          </li>
+          <li class="reveal-up">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 20h36l-6 30H20z" /><path d="M24 12c0-4 4-4 4-8M36 12c0-4 4-4 4-8" /></svg>
+            <b>03</b><h3>Brew with patience</h3><p>Espresso pulled to the second; cold brew steeped low and slow.</p>
+          </li>
+          <li class="reveal-up">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M18 26h28v14a14 14 0 0 1-28 0z" /><path d="M46 30h4a5 5 0 0 1 0 10h-4" /><path d="M26 34c3-4 9-4 12 0-3 4-9 4-12 0z" /></svg>
+            <b>04</b><h3>Pour with intent</h3><p>Latte art, layered tonics, a final flourish. Then it's all yours.</p>
+          </li>
+        </ol>
+        <div class="slowbar">
+          <div class="slowbar__media frame parallax" data-speed="-0.06">
+            <img src="assets/ig/p02-grind.jpg" alt="Espresso grinder display at Arabista" loading="lazy" />
+          </div>
+          <div class="slowbar__copy">
+            <p class="kicker">The Slow Bar</p>
+            <h3 class="h3">Hand-brewed, one cup at a time.</h3>
+            <ul>
+              <li><span>V60 Pour Over</span><i></i><b>₹200</b></li>
+              <li><span>Aeropress</span><i></i><b>₹200</b></li>
+              <li><span>French Press</span><i></i><b>₹200</b></li>
+            </ul>
+            <p class="muted">Ask the bar what's on grind today — they love this question.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EVENTS ============ -->
+    <section class="events section" id="events">
+      <div class="container">
+        <div class="section-head section-head--row">
+          <div>
+            <p class="kicker">Events &amp; community</p>
+            <h2 class="h2 split">Arabista brings the vibe. <em>You make the memories.</em></h2>
+          </div>
+          <a class="btn btn--ghost magnetic" href="#visit" data-event><span>Host with us</span></a>
+        </div>
+        <div class="events__grid">
+          <article class="ev ev--feature tilt">
+            <img src="assets/ig/p06-nightlights.jpg" alt="Masquerade Dandiya Night at Arabista" loading="lazy" />
+            <div class="ev__body">
+              <span class="ev__date"><b>20</b>Oct</span>
+              <p class="ev__kicker">Recently · Invite-only</p>
+              <h3>Masquerade Dandiya Night</h3>
+              <p>A little mystery, a lot of dandiya. Festive glam, crazy beats and the most amazing people under our lights.</p>
+            </div>
+          </article>
+          <article class="ev tilt">
+            <img src="assets/ig/p10-open3am.jpg" alt="Open till 3 AM poster" loading="lazy" />
+            <div class="ev__body">
+              <p class="ev__kicker">Festive late nights</p>
+              <h3>Open till 3 AM</h3>
+              <p>Garba can wait — the cravings can't. Watch our Instagram for the next late-night run.</p>
+            </div>
+          </article>
+          <article class="ev tilt">
+            <img src="assets/ig/p05-dandiya.jpg" alt="Dandiya night decor at Arabista" loading="lazy" />
+            <div class="ev__body">
+              <p class="ev__kicker">Private bookings</p>
+              <h3>Your night, our courtyard</h3>
+              <p>Birthdays, launches, creator meet-ups, workshops. Tell us the plan; we'll set the scene.</p>
+            </div>
+          </article>
+        </div>
+        <ul class="events__tags">
+          <li>Birthdays</li><li>Product launches</li><li>Creator meet-ups</li><li>Founder mornings</li><li>Workshops</li><li>Content shoots</li><li>Festive nights</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ VOICES ============ -->
+    <section class="voices section" id="voices">
+      <div class="container">
+        <p class="kicker">What Surat says</p>
+        <div class="voices__slider" id="voiceSlider">
+          <blockquote class="voice is-active">
+            <p>“One of those places that just gets the vibe right.”</p>
+            <cite>@namrata.sewani · Instagram</cite>
+          </blockquote>
+          <blockquote class="voice">
+            <p>“Surat's best coffee with the best sunset view.”</p>
+            <cite>@foodie_on_enfield · Instagram</cite>
+          </blockquote>
+          <blockquote class="voice">
+            <p>“Found my new favourite spot to romanticise a slow evening in Surat.”</p>
+            <cite>Reel review · Instagram</cite>
+          </blockquote>
+          <blockquote class="voice">
+            <p>“Crispy bites &amp; a cozy café.”</p>
+            <cite>@with_mahekk · Instagram</cite>
+          </blockquote>
+        </div>
+        <div class="voices__dots" id="voiceDots" role="tablist" aria-label="Choose a review"></div>
+      </div>
+    </section>
+
+    <!-- ============ FEED ============ -->
+    <section class="feed section" id="feed">
+      <div class="container">
+        <div class="section-head section-head--row">
+          <div>
+            <p class="kicker">@arabista_in</p>
+            <h2 class="h2 split">Fresh from <em>the feed.</em></h2>
+          </div>
+          <a class="btn btn--ghost magnetic" href="https://www.instagram.com/arabista_in/" target="_blank" rel="noopener"><span>Follow on Instagram</span></a>
+        </div>
+        <div class="feed__grid" id="feedGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============ VISIT ============ -->
+    <section class="visit section" id="visit">
+      <div class="container visit__grid">
+        <div class="visit__info">
+          <p class="kicker">Visit us</p>
+          <h2 class="h2 split">Pull up a chair. <em>Watch the sun go down.</em></h2>
+          <dl class="visit__list">
+            <div><dt>Address</dt><dd>Plot 3, Gaurav Path, Park Arena Road,<br />Near Pal Umra Bridge, Pal Gam, Surat 395009</dd></div>
+            <div><dt>Hours</dt><dd>Open daily · 9:00 AM – 11:30 PM <span class="status status--inline" id="openStatus2"><i></i><b></b></span></dd></div>
+            <div><dt>Call</dt><dd><a href="tel:+917600577745">+91 76005 77745</a></dd></div>
+            <div><dt>Order in</dt><dd><a href="https://www.zomato.com/surat/arabista-pal-gam/order" target="_blank" rel="noopener">Zomato ↗</a></dd></div>
+          </dl>
+          <div class="visit__actions">
+            <a class="btn btn--gold magnetic" href="https://www.google.com/maps/search/?api=1&amp;query=Arabista+Cafe+Pal+Gam+Surat" target="_blank" rel="noopener"><span>Get directions</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" /></svg></a>
+            <a class="btn btn--ghost magnetic" href="tel:+917600577745"><span>Call the café</span></a>
+          </div>
+          <div class="map">
+            <iframe title="Map to Arabista Café, Pal Gam, Surat" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Arabista%20Cafe%2C%20Park%20Arena%20Road%2C%20Pal%20Gam%2C%20Surat&amp;z=15&amp;output=embed"></iframe>
+          </div>
+        </div>
+
+        <form class="reserve" id="reserveForm" novalidate>
+          <div class="reserve__head">
+            <p class="kicker">Reserve</p>
+            <h3 class="h3">Book a table</h3>
+            <div class="seg" role="radiogroup" aria-label="Booking type">
+              <label><input type="radio" name="kind" value="table" checked /><span>Table</span></label>
+              <label><input type="radio" name="kind" value="event" /><span>Private event</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <input id="rName" name="guestName" required autocomplete="name" placeholder=" " />
+            <label for="rName">Your name</label>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <input id="rDate" name="date" type="date" required placeholder=" " />
+              <label for="rDate">Date</label>
+            </div>
+            <div class="field">
+              <select id="rTime" name="time" required></select>
+              <label for="rTime">Time</label>
+            </div>
+          </div>
+          <div class="field">
+            <span class="field__label">Guests</span>
+            <div class="stepper">
+              <button type="button" data-step="-1" aria-label="Fewer guests">−</button>
+              <output id="rGuests" name="guests">2</output>
+              <button type="button" data-step="1" aria-label="More guests">+</button>
+            </div>
+          </div>
+          <div class="field">
+            <select id="rSeat" name="seat">
+              <option>Courtyard (open-air)</option>
+              <option>Sunset-facing</option>
+              <option>Quiet corner (laptop friendly)</option>
+              <option>No preference</option>
+            </select>
+            <label for="rSeat">Seating</label>
+          </div>
+          <div class="field">
+            <textarea id="rNote" name="note" rows="2" placeholder=" "></textarea>
+            <label for="rNote">Occasion or notes (optional)</label>
+          </div>
+          <button class="btn btn--gold btn--block magnetic" type="submit"><span>Confirm on WhatsApp</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></button>
+          <p class="reserve__fine">We'll open WhatsApp with your booking details ready to send. The café confirms every request personally.</p>
+          <p class="reserve__err" id="reserveErr" role="alert"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <p class="footer__big">Coffee.<br />Community.<br /><em>Connection.</em></p>
+        </div>
+        <div class="footer__cols">
+          <div>
+            <h4>Explore</h4>
+            <a href="#signatures">Signatures</a><a href="#menu">Menu</a><a href="#ambience">Ambience</a><a href="#events">Events</a>
+          </div>
+          <div>
+            <h4>Visit</h4>
+            <p>Plot 3, Gaurav Path,<br />Park Arena Rd, Pal Gam,<br />Surat 395009</p>
+            <p>Daily · 9 AM – 11:30 PM</p>
+          </div>
+          <div>
+            <h4>Follow</h4>
+            <a href="https://www.instagram.com/arabista_in/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.zomato.com/surat/arabista-pal-gam" target="_blank" rel="noopener">Zomato</a>
+            <a href="https://wa.me/917600577745" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__word" aria-hidden="true">ARA<i>b</i>ISTA</div>
+      <div class="footer__bottom">
+        <span>© <span id="year">2026</span> Arabista Café, Surat</span>
+        <a href="#top" class="totop">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ TRAY ============ -->
+  <button class="tray-fab" id="trayFab" aria-label="Open your tray" aria-controls="tray" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16l-1.5 11a2 2 0 0 1-2 1.7h-9a2 2 0 0 1-2-1.7z" /><path d="M8 8a4 4 0 0 1 8 0" /></svg>
+    <span class="tray-fab__count" id="trayCount">0</span>
+  </button>
+  <aside class="tray" id="tray" aria-hidden="true" aria-label="Your tray">
+    <div class="tray__head">
+      <h3>Your tray</h3>
+      <button class="tray__close" id="trayClose" aria-label="Close tray">×</button>
+    </div>
+    <ul class="tray__list" id="trayList"></ul>
+    <p class="tray__empty" id="trayEmpty">Your tray is empty. Add something delicious from the menu.</p>
+    <div class="tray__foot">
+      <div class="seg seg--sm" role="radiogroup" aria-label="Order type">
+        <label><input type="radio" name="otype" value="Dine-in" checked /><span>Dine-in</span></label>
+        <label><input type="radio" name="otype" value="Takeaway" /><span>Takeaway</span></label>
+      </div>
+      <div class="tray__total"><span>Estimated total</span><b id="trayTotal">₹0</b></div>
+      <button class="btn btn--gold btn--block" id="traySend"><span>Send order on WhatsApp</span></button>
+      <a class="tray__alt" href="https://www.zomato.com/surat/arabista-pal-gam/order" target="_blank" rel="noopener">Prefer delivery? Order on Zomato ↗</a>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- mobile quick actions -->
+  <nav class="quickbar" aria-label="Quick actions">
+    <a href="tel:+917600577745"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" /></svg>Call</a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Arabista+Cafe+Pal+Gam+Surat" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" /><circle cx="12" cy="10" r="2.5" /></svg>Directions</a>
+    <a href="#menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h14v16H5zM9 8h6M9 12h6M9 16h4" /></svg>Menu</a>
+    <a href="#visit" data-reserve><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M4 10h16M9 3v4M15 3v4" /></svg>Reserve</a>
+  </nav>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
